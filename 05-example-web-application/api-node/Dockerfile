@@ -11,6 +11,7 @@ RUN --mount=type=cache,target=/usr/src/app/.npm \
 ENV MODE_ENV production
 
 RUN npm ci --only=production
+
 USER node
 
 COPY --chown=node:node  ./src .
