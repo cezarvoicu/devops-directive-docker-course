@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/usr/src/app/.npm \
     npm set cache /usr/src/app/.npm && \
     npm ci --only=production
 
-ENV MODE_ENV production
+ENV MODE_ENV=production
 
 RUN npm ci --only=production
 
