@@ -1,0 +1,22 @@
+FROM golang:1.19-buster AS build
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY . .
+
+RUN go build -o \
+    -ldflags="-linkmode external -extldflags -static" \
+    -tags netgo \
+    -o api-golang
+
+#Scratch stage
+
+FROM scratch
+
+COPY --from=build /app/api-golang /api-golang
+
+CMD ["./api-golang"]
