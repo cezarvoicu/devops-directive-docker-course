@@ -40,6 +40,7 @@ services:
     build:
       context: ../05-example-web-application/api-node/
       dockerfile: ../../06-building-container-images/api-node/Dockerfile.9
+      target: dev
     init: true
     volumes:
       - type: bind
