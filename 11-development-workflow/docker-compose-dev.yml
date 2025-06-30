@@ -7,6 +7,11 @@ services:
     init: true
     volumes:
       - type: bind
+        source: ../05-example-web-application/client-react/
+        target: /usr/src/app/
+      - type: volume
+        target: /usr/src/app/node_modules
+      - type: bind
         source: ../08-running-containers/client-react/vite.config.js
         target: /usr/src/app/vite.config.js
     networks:
