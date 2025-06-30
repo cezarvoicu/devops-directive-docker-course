@@ -22,7 +22,7 @@ jobs:
             cezarvoicu/devops-directive-docker-course
           tags: |
             type=raw,value=latest
-            type=ref,event=brancht
+            type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
