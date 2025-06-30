@@ -19,7 +19,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            cezar3231/cezar-repository
+            cezarvoicu/devops-directive-docker-course
           tags: |
             type=raw,value=latest
             type=ref,event=brancht
