@@ -39,8 +39,14 @@ services:
     image: api-node
     build:
       context: ../05-example-web-application/api-node/
-      dockerfile: ../../06-building-container-images/api-node/Dockerfile.7
+      dockerfile: ../../06-building-container-images/api-node/Dockerfile.9
     init: true
+    volumes:
+      - type: bind
+        source: ../05-example-web-application/api-node/
+        target: /usr/src/app/
+      - type: volume
+        target: /usr/src/app/node_modules
     depends_on:
       - db
     environment:
